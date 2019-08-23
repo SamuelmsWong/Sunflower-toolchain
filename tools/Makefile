@@ -10,7 +10,7 @@ UNCERTAIN	= $(TOOLS)/source/uncertain
 
 
 
-all: binutils gcc g++ newlib printf uncertain
+all: binutils gcc newlib printf uncertain
 
 
 binutils: binutils-pre binutils-post
@@ -23,6 +23,7 @@ binutils-pre:
 	export MAKEINFO=missing && ../configure --disable-docs --target=$(TARGET-ARCH)\
 		--prefix=$(PREFIX) --disable-libssp --disable-nls -v;\
 	# $(MAKE) -r CC=$(TOOLCC) CFLAGS="-D_FORTIFY_SOURCE=1" LD=$(TOOLCC) all install;\
+	$(MAKE) all install;\
 
 binutils-post:
 	cp $(PREFIX)/bin/$(TARGET-ARCH)* $(TOOLS)/bin/;\
