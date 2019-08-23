@@ -11,17 +11,17 @@ GCC_TAR=${GCC_VER}.tar.gz
 NEWLIB_TAR=${NEWLIB_VER}.tar.gz
 PRINTF_TAR=v${PRINTF_VER}.tar.gz
 
-# wget	ftp://ftp.gnu.org/pub/gnu/gcc/$GCC_VER/$GCC_TAR
-# wget	ftp://sources.redhat.com/pub/newlib/$NEWLIB_TAR
+wget	ftp://ftp.gnu.org/pub/gnu/gcc/$GCC_VER/$GCC_TAR
+wget	ftp://sources.redhat.com/pub/newlib/$NEWLIB_TAR
 wget	https://github.com/mpaland/printf/archive/$PRINTF_TAR
 
-# tar -xvf $GCC_TAR
-# tar -xzvf $NEWLIB_TAR
+tar -xvf $GCC_TAR
+tar -xzvf $NEWLIB_TAR
 tar -xzvf $PRINTF_TAR
 
-# git clone --depth=1 --branch=$BINU    TILS_VER git://sourceware.org/git/binutils-gdb.git $BINUTILS_VER
-# cd $BINUTILS_VER
-# git apply ../patches/binutils/uncertain.patch
-# cd -
+git clone --depth=1 --branch=$BINUTILS_VER git://sourceware.org/git/binutils-gdb.git $BINUTILS_VER
+cd $BINUTILS_VER
+git apply ../patches/binutils/uncertain.patch
+cd -
 
 rm $NEWLIB_TAR $GCC_TAR $BINUTILS_TAR $PRINTF_TAR
