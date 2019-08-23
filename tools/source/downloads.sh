@@ -1,7 +1,7 @@
 #!/bin/sh
 
 GCC_VER="gcc-8.2.0"
-BINUTILS_VER="binutils-2.29.1"
+BINUTILS_VER="binutils-2.32"
 NEWLIB_VER="newlib-2.5.0.20170922"
 
 GCC_TAR=${GCC_VER}.tar.gz
